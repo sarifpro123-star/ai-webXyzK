@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#FAF6EE">
+  <title>MY OWN AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lexend+Mega:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">✳</div><div><b>MY OWN AI</b><small>LOCAL INTELLIGENCE</small></div></div>
+      <button class="new-chat" id="newChat">＋ <span>Chat baru</span></button>
+      <div class="side-label">RIWAYAT</div>
+      <div class="chat-list" id="chatList"></div>
+      <div class="side-bottom">
+        <div class="engine-card"><span class="pulse" id="pulse"></span><div><b id="engineStatus">Memeriksa engine</b><small id="modelName">Model lokal</small></div></div>
+        <div class="side-note">Berjalan di server milikmu.<br>Tanpa API AI eksternal.</div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Menu">☰</button>
+        <div class="top-title">Workspace <span>/</span> <b>Assistant</b></div>
+        <div class="top-right"><span class="local-tag">● LOCAL ENGINE</span></div>
+      </header>
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <div class="orb"><span>✳</span></div>
+          <div class="eyebrow">PRIVATE · SELF-HOSTED · YOURS</div>
+          <h1>Halo, apa yang<br><em>ingin kamu buat?</em></h1>
+          <p>Asisten AI yang berjalan di infrastruktur milikmu sendiri.</p>
+          <div class="suggestions">
+            <button data-prompt="Jelaskan cara kerja REST API dengan contoh sederhana.">⌘ <span>Belajar pemrograman</span><b>↗</b></button>
+            <button data-prompt="Bantu saya merancang arsitektur aplikasi Node.js.">◇ <span>Rancang aplikasi</span><b>↗</b></button>
+            <button data-prompt="Buatkan checklist keamanan untuk server Linux saya.">⌁ <span>Keamanan defensif</span><b>↗</b></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="12000" placeholder="Tulis pesan untuk AI..." required></textarea>
+          <div class="composer-bottom"><span>AI lokal dapat membuat kesalahan. Periksa informasi penting.</span><button id="sendBtn" type="submit" aria-label="Kirim">↑</button></div>
+        </form>
+        <div class="footnote">MY OWN AI <span>·</span> POWERED BY YOUR OWN MODEL</div>
+      </footer>
+    </main>
+  </div>
+  <script src="/config.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

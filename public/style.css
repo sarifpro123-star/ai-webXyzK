@@ -1,0 +1,91 @@
+*{box-sizing:border-box}
+:root{--cream:#FAF6EE;--apricot:#FFB38A;--lavender:#E3D5CA;--mint:#B5E2FA;--charcoal:#252525;--line:3px solid var(--charcoal);--shadow:6px 6px 0 var(--charcoal);--shadow-sm:4px 4px 0 var(--charcoal)}
+html{background:var(--cream);scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--charcoal);font-family:Inter, sans-serif}
+button,textarea{font:inherit}
+button{cursor:pointer}
+.app{display:flex;min-height:100vh;background:var(--cream)}
+.sidebar{width:276px;flex-shrink:0;background:var(--lavender);border-right:var(--line);padding:24px 18px;display:flex;flex-direction:column;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;padding:2px 5px 30px}
+.brand-mark{width:43px;height:43px;border:var(--line);border-radius:12px;background:var(--apricot);color:var(--charcoal);display:grid;place-items:center;font-size:28px;box-shadow:var(--shadow-sm);transform:rotate(-4deg)}
+.brand b{font:800 14px "Lexend Mega",sans-serif;letter-spacing:-.8px;display:block}
+.brand small{font-size:9px;font-weight:800;letter-spacing:1.6px;display:block;margin-top:4px}
+.new-chat{border:var(--line);background:var(--mint);color:var(--charcoal);border-radius:10px;text-align:left;padding:13px 14px;font-weight:800;box-shadow:var(--shadow-sm);transition:transform .12s,box-shadow .12s}
+.new-chat:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--charcoal)}
+.new-chat:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--charcoal)}
+.side-label{font:800 10px "Lexend Mega";letter-spacing:1px;margin:31px 8px 12px}
+.chat-list{overflow:auto;display:flex;flex-direction:column;gap:8px}
+.chat-item{border:2px solid var(--charcoal);background:var(--cream);color:var(--charcoal);text-align:left;padding:11px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-weight:700;box-shadow:3px 3px 0 var(--charcoal);transition:.14s}
+.chat-item:hover,.chat-item.active{background:var(--apricot);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--charcoal)}
+.side-bottom{margin-top:auto}
+.engine-card{border:var(--line);background:var(--cream);padding:12px;border-radius:10px;display:flex;gap:10px;align-items:center;box-shadow:var(--shadow-sm)}
+.engine-card b{font-size:12px;display:block;font-weight:800}
+.engine-card small{color:#59534e;font-size:10px}
+.pulse{width:10px;height:10px;border:2px solid var(--charcoal);border-radius:50%;background:#ff9a75;flex-shrink:0}
+.pulse.online{background:#8ed9a2;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 5px #8ed9a255}}
+.side-note{font-size:10px;line-height:1.7;color:#554e48;padding:14px 4px 0;font-weight:600}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;min-height:100vh;background:var(--cream)}
+.topbar{height:72px;border-bottom:var(--line);display:flex;align-items:center;padding:0 34px;justify-content:space-between;background:var(--cream)}
+.top-title{font-size:12px;font-weight:600}.top-title span{padding:0 9px;color:#8a8077}.top-title b{font-family:"Lexend Mega";font-size:11px}
+.top-right{display:flex;align-items:center;gap:10px}
+.local-tag{font:800 9px "Lexend Mega";letter-spacing:.6px;color:var(--charcoal);border:2px solid var(--charcoal);background:var(--mint);padding:9px 11px;border-radius:8px;box-shadow:3px 3px 0 var(--charcoal)}
+.conversation{flex:1;overflow:auto;padding:40px 22px 20px}
+.welcome{max-width:720px;margin:2vh auto 0;text-align:center;animation:rise .5s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.orb{width:76px;height:76px;margin:0 auto 25px;border:var(--line);border-radius:20px;background:var(--apricot);display:grid;place-items:center;color:var(--charcoal);font-size:42px;box-shadow:var(--shadow);transform:rotate(-5deg)}
+.eyebrow{display:inline-block;font:800 9px "Lexend Mega";letter-spacing:1.4px;background:var(--mint);border:2px solid var(--charcoal);padding:8px 11px;box-shadow:3px 3px 0 var(--charcoal);transform:rotate(-1deg)}
+.welcome h1{font:800 clamp(34px,5vw,58px)/1.08 "Lexend Mega",sans-serif;letter-spacing:-3.5px;margin:25px 0 15px}
+.welcome h1 em{font-style:normal;background:var(--apricot);padding:0 7px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.welcome p{color:#625b53;font-size:14px;font-weight:500}
+.suggestions{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:38px;text-align:left}
+.suggestions button{min-height:116px;background:var(--mint);border:var(--line);border-radius:12px;padding:15px;color:var(--charcoal);text-align:left;font-size:17px;font-weight:800;box-shadow:var(--shadow);transition:transform .13s,box-shadow .13s}
+.suggestions button:nth-child(2){background:var(--apricot)}
+.suggestions button:nth-child(3){background:var(--lavender)}
+.suggestions button span{display:block;font:700 12px Inter;margin-top:19px}
+.suggestions button b{float:right;font-size:17px}
+.suggestions button:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--charcoal)}
+.suggestions button:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--charcoal)}
+.messages{max-width:850px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.message{display:flex;gap:13px;align-items:flex-start;animation:rise .25s ease both}
+.avatar{width:36px;height:36px;border:2px solid var(--charcoal);border-radius:10px;flex-shrink:0;display:grid;place-items:center;font-size:15px;font-weight:900;background:var(--mint);box-shadow:3px 3px 0 var(--charcoal)}
+.message.user .avatar{background:var(--apricot)}
+.bubble{font-size:14px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;padding:12px 15px;max-width:100%;border:2px solid var(--charcoal);border-radius:10px;background:#fffdf8;box-shadow:4px 4px 0 var(--charcoal)}
+.message.user .bubble{background:var(--lavender);color:var(--charcoal)}
+.message.assistant .bubble{background:#fffdf8;color:var(--charcoal)}
+.typing{display:inline-flex;align-items:center;gap:8px;color:#5b554e;font-size:12px;font-weight:700}
+.typing:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--apricot);border:1.5px solid var(--charcoal);animation:blink .7s infinite alternate}
+@keyframes blink{to{opacity:.2;transform:scale(.7)}}
+.composer-wrap{padding:10px 22px 17px}
+.composer{max-width:850px;margin:0 auto;border:var(--line);background:#fffdf8;border-radius:13px;padding:12px 13px 9px;box-shadow:var(--shadow);transition:transform .15s}
+.composer:focus-within{transform:translate(-1px,-1px);box-shadow:8px 8px 0 var(--charcoal)}
+textarea{display:block;width:100%;resize:none;max-height:180px;border:0;outline:0;background:transparent;color:var(--charcoal);font:14px/1.6 Inter;padding:3px 4px}
+textarea::placeholder{color:#82786d}
+.composer-bottom{display:flex;align-items:center;justify-content:space-between;color:#766d63;font-size:10px;padding:8px 0 0 3px;gap:10px}
+.composer-bottom button{width:39px;height:37px;border:2px solid var(--charcoal);border-radius:9px;background:var(--apricot);color:var(--charcoal);font-size:24px;font-weight:900;box-shadow:3px 3px 0 var(--charcoal);transition:.12s}
+.composer-bottom button:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--charcoal)}
+.composer-bottom button:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--charcoal)}
+.composer-bottom button:disabled{opacity:.5;cursor:wait}
+.footnote{text-align:center;font:800 8px "Lexend Mega";letter-spacing:1px;color:#756c61;margin-top:14px}
+.footnote span{padding:0 5px}
+.mobile-menu{display:none}
+.empty{color:#625b53;font-size:12px;padding:10px;font-weight:600}
+.error{background:#ffe0d9!important}
+@media(max-width:760px){
+.sidebar{position:fixed;inset:0 auto 0 0;transform:translateX(-105%);transition:transform .24s ease;width:280px;box-shadow:8px 0 0 var(--charcoal)}
+.sidebar.open{transform:translateX(0)}
+.topbar{padding:0 14px;height:62px}
+.mobile-menu{display:block;background:var(--apricot);color:var(--charcoal);border:2px solid var(--charcoal);border-radius:8px;padding:6px 9px;margin-right:12px;box-shadow:3px 3px 0 var(--charcoal)}
+.top-title{margin-right:auto}
+.conversation{padding:30px 14px 15px}
+.welcome{margin-top:3vh}
+.welcome h1{letter-spacing:-2px}
+.suggestions{grid-template-columns:1fr;margin-top:27px;gap:10px}
+.suggestions button{min-height:72px;padding:11px 13px}
+.suggestions button span{display:inline;margin-left:8px}
+.suggestions button b{margin-top:0}
+.composer-wrap{padding:8px 12px 13px}
+.local-tag{font-size:7px;padding:7px}
+.footnote{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
